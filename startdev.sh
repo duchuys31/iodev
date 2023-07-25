@@ -1,0 +1,1 @@
+cd ioeureka && mvn spring-boot:run && cd .. && cd iogateway && mvn spring-boot:run && cd .. && cd iosecurity && mvn spring-boot:run && cd .. && cd humanresources && mvn spring-boot:run && cd .. && cd contestmanagementsystem && mvn spring-boot:run  && cd ..

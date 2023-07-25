@@ -1,0 +1,1 @@
+cd ioeureka && ./start.sh && cd .. && cd iogateway && ./start.sh && cd .. && cd iosecurity && ./start.sh && cd .. && cd humanresources && ./start.sh && cd .. && cd contestmanagementsystem && ./start.sh && cd ..

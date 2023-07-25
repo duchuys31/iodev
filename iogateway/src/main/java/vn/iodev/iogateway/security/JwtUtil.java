@@ -1,0 +1,32 @@
+package vn.iodev.iogateway.security;
+
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import java.util.Date;
+
+@Component
+public class JwtUtil {
+    @Value("${io.security.jwt.secret}")
+    private String secret;
+
+    @PostConstruct
+    public void init() {
+    }
+
+    public Claims getAllClaimsFromToken(String token) {
+        return Jwts.parser().setSigningKey(secret).parseClaimsJws(token).getBody();
+    }
+
+    private boolean isTokenExpired(String token) {
+        return this.getAllClaimsFromToken(token).getExpiration().before(new Date());
+    }
+
+    public boolean isInvalid(String token) {
+        return this.isTokenExpired(token);
+    }
+
+}

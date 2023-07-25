@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+    <h1 style="color: red; font-weight: bold" th:text="'Xin chào!!'"></h1>
+    <p>
+        <span th:text="'Đây là mã kích hoạt của bạn: '"></span>
+        <h3 th:text="${MaKichHoat}"></h3>
+    </p>
+    <p th:text="'Cám ơn bạn đã đăng ký sử dụng ứng dụng IO. Đây là email kích hoạt tài khoản của bạn. Hãy xác minh địa chỉ email của bạn bằng cách bấm vào đường link sau: '"></p>
+    <a th:text="${LinkKichHoat}" th:href="${LinkKichHoat}"></a>
+    <p>Thanks!</p>
+</body>
+</html>
